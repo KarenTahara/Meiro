@@ -73,15 +73,19 @@ class Maze{
    text("Goal!",305+40,400+220+w+30);
     
   }
-  
 }
 
 
 class Stage {
+  
+  
 }
 
 
 class Obstacle {
+  
+  
+  
 }
 
 Ball b;
