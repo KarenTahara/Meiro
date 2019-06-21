@@ -78,6 +78,18 @@ class Maze{
 
 
 class Stage {
+
+    void clearStage1(int dx,int dy){
+    if((dx>400+50 && dx<600) &&(dy>height-650+50 && dy<height-650+150)){
+    stage++; 
+  }
+  }
+  void clearStage2(int dx,int dy){
+    if((dx>305+40 && dx<305+40+100) &&(dy>640 && dy<640+35*2-2)){
+    stage++; 
+   }
+  }
+
 }
 
 
