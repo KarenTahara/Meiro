@@ -13,7 +13,6 @@ class Stage {
        stage=5;
      }
    }
-   
     void clearStage1(int dx,int dy){
     if((dx>400+50 && dx<600) &&(dy>height-650+50 && dy<height-650+150)){
     stage++; 
