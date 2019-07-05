@@ -146,7 +146,7 @@ void draw() {
   //ゲームオーバー画面
   if (stage==5) {
     //gameoverになる
-    limitTime= 100;
+    limitTime= 100; //timeを100に変えるよ
     background(0);
     PImage gameover=loadImage("gameover.jpg");
     image(gameover,0,0,800,800);
