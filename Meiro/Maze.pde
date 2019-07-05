@@ -3,6 +3,8 @@ class Maze{
   void maze1(){
     w=50;
     //壁描画
+    noStroke();
+
     fill(139,69,19);
     int[][] data1={{200,0,w,700},{400,height-650,w,650},
        {600,height-650,w,550},{400,height-650,200,w}};
@@ -10,8 +12,8 @@ class Maze{
     
     for(int i=0;i<A.length;i++){
        rect(A[i][0],A[i][1],A[i][2],A[i][3]);
-    }    
-    
+    } 
+    stroke(0);
     //Start!    
     fill(200,100,100);
     rect(0,0,200,100);
@@ -28,6 +30,7 @@ class Maze{
   }
   void maze2(){
    w=35;
+   noStroke();
    fill(139,69,19);
   rect(200, 0, w, 150);
   rect(200, 150, 200, w);
@@ -46,6 +49,7 @@ class Maze{
   rect(305,400+220+w*2.5,400,20);
   rect(305+400-w,400+w*3+2,w,200);
 
+   stroke(0);
   //Start!    
   fill(200, 100, 100);
   rect(0, 0, 200, 100);
