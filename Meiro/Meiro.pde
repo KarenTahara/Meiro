@@ -138,8 +138,9 @@ void draw() {
   if (stage==4) {
     //crearになる
     background(0);
-    fill(100);
-    text("crear!", width/2, height/2);
+    fill(100);    
+    PImage clear=loadImage("clear.png");
+    image(clear,0,0,800,800);
   }
 
   //ゲームオーバー画面
@@ -147,8 +148,8 @@ void draw() {
     //gameoverになる
     limitTime= 5;
     background(0);
-    fill(255);
-    text("gameover..", width/2, height/2);
+    PImage gameover=loadImage("gameover.jpg");
+    image(gameover,0,0,800,800);
   }
 }
 
