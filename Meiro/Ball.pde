@@ -1,12 +1,15 @@
 class Ball {
-      int x=100, y=100, size = 50;
+  int x=100, y=100, size = 50; //ボールの座標
+  
   int ugokuyo=0;
   boolean dead=false;
-  PImage img = loadImage("idor.png");
+  PImage img = loadImage("idor.png");//カーソル上の絵
+  
   void move() {
     if (mouseX >x-size/2 && mouseX < x+size/2
       && mouseY >y-size/2 && mouseY < y+size/2) {
-      ugokuyo=1;
+        //カーソルが絵の上に入った時の判定
+        ugokuyo=1; 
     }
     if (ugokuyo==1) {
       x=mouseX;
@@ -16,7 +19,7 @@ class Ball {
   void starts() {
     if (mouseX > 50 && mouseX < 150
       && mouseY > 50 && mouseY < 150) {
-      StartOverCount=1;
+     StartOverCount=1; //スタートする
     }
   }
   void display() {
@@ -24,18 +27,18 @@ class Ball {
     image(img, x-50, y-50, 100, 100);
     //ellipse(x, y, size, size);
   }
-  void wallDead1() {
+  void wallDead1() { //ステージ1の壁判定
     if ((x>200 && x<250 && y>0 && y<700) ||
       (x>400 && x<400+50 && y>height-650 && y<height) ||
       (x>600 && x<600+50 && y>height-650 && y<height-650+550) ||
       (x>400 && x<400+200 && y>height-650 && y<height-650+50) ) {
-      stage=0;
+      stage=0; //壁に当たったらステージ0
     }
   }
 
 
 
-  void wallDead2() {
+  void wallDead2() { //ステージ2の壁判定
     int w=35;
     if ((x>200 && x<200+w && y>0 && y<150) ||
       (x>200 && x<200+200 && y>150 && y<150+w) ||
@@ -56,7 +59,7 @@ class Ball {
       (x>305+400-w && x<305+400-w+w && y>400+w*3+2 && y<400+w*3+2+200) 
 
       ) {
-      stage=0;
+      stage=0; //壁に当たったらステージ0に戻る
     }
   }
 

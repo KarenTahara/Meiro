@@ -21,9 +21,9 @@ void setup() {
   b = new Ball();
   s = new Stage();
   o = new Obstacle(200, 680, 4, 5);
-  o2 = new Obstacle(200, 400, -1, 6);
-  o3 = new Obstacle(600, 600, -4, 10);
-  o4 = new Obstacle(400, 400, -20, 20);
+  o2 = new Obstacle(500, 400, -1, 6);
+  o3 = new Obstacle(600, 600, 4, -10);
+  o4 = new Obstacle(400, 400, -20, -17);
   m = new Maze();
   frameRate(30);
 }
@@ -103,7 +103,7 @@ void draw() {
   if (stage==3) {
     //print(StartOverCount);
     if (limitTime % 2 == 0) {
-      background(0);
+      background(255);
     } else {
       background(139,69,19);
     }
