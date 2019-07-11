@@ -10,7 +10,7 @@ class Stage {
      text(nf(limitTime, 2), width/2, 50);
      
      if(limitTime < 0){
-       stage=5;
+       stage=6;
      }
    }
    
