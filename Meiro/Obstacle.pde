@@ -1,5 +1,5 @@
 class Obstacle {
-  int x, y,size = 30;
+    int x, y,size = 30;
   int stepX, stepY;
   int w = 50;
   PImage img = loadImage("gokiburi.png");
@@ -28,9 +28,8 @@ class Obstacle {
   }
   void gokidead(int dx,int dy){
     if((dx > x-size && dx < x+size ) && (dy > y-size && dy < y+size)){
-      stage= 0;
+      stage= 1;
     }
   }
-
 
 }
