@@ -28,18 +28,25 @@ void setup() {
   frameRate(30);
 }
 void draw() { 
-
   //スタート画面
-  if (stage == 0) {//ゲームのスタート画面
+  if (stage==0) { //スタート画面
+    background(0);
+    PImage start=loadImage("start.jpg");
+    image(start, 0, 0, 800, 800);
+  }
+
+  //クリック画面
+  if (stage == 1) {//ゲームの再開画面
     background(200, 100, 100);
-    text("gamestart", width/2, height/2);
+    textSize(50);
+    text("Click!!!", width/2, height/2);
     StartOverCount=0;
   }
   //print(StartOverCount);
 
 
   //ステージ１
-  if (stage==1) {
+  if (stage==2) {
     background(255);
 
     b.starts();
@@ -69,7 +76,7 @@ void draw() {
   } 
 
   //ステージ２
-  if (stage==2) {
+  if (stage==3) {
     b.starts();
     background(128);
 
@@ -82,8 +89,6 @@ void draw() {
       o.gokidead(b.x, b.y);//ゴキ判定
       o2.gokidead(b.x, b.y);//ゴキ判定
       o3.gokidead(b.x, b.y);//ゴキ判定
-     
-
     }
 
     m.maze2();//迷路描画
@@ -100,12 +105,12 @@ void draw() {
   }
 
   //ステージ３
-  if (stage==3) {
+  if (stage==4) {
     //print(StartOverCount);
     if (limitTime % 2 == 0) {
       background(255);
     } else {
-      background(139,69,19);
+      background(139, 69, 19);
     }
     b.starts();
 
@@ -135,21 +140,21 @@ void draw() {
   }
 
   //クリア画面
-  if (stage==4) {
+  if (stage==5) {
     //crearになる
     background(0);
     fill(100);    
     PImage clear=loadImage("clear.png");
-    image(clear,0,0,800,800);
+    image(clear, 0, 0, 800, 800);
   }
 
   //ゲームオーバー画面
-  if (stage==5) {
+  if (stage==6) {
     //gameoverになる
     limitTime= 100; //timeを100に変えるよ
     background(0);
     PImage gameover=loadImage("gameover.jpg");
-    image(gameover,0,0,800,800);
+    image(gameover, 0, 0, 800, 800);
   }
 }
 
@@ -157,7 +162,15 @@ void mouseClicked() {
   if (stage==0) {
     stage++;
   }
+  if (stage==1) {
+    stage++;
+  }
   if (stage == 5) {
     stage = 0;
+    StartOverCount=0;
+  }
+  if (stage == 6) {
+    stage = 0;
+    StartOverCount=0;
   }
 }
